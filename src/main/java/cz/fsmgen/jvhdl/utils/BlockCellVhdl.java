@@ -24,15 +24,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 import javax.swing.JOptionPane;
-import jvhdl.ConditionVhdl;
-import jvhdl.EntityVhdl;
-import jvhdl.ExprVhdl;
-import jvhdl.VHDL;
-import jvhdl.datatypes.EnumVhdl;
-import jvhdl.datatypes.SignalVhdl;
-import jvhdl.datatypes.std.StdLogicVhdl;
-import jvhdl.exception.SyntaxErrorVhdl;
-import jvhdl.vdhdlgenerator.VhdlWriter;
+import cz.jvhdl.*;
+import cz.jvhdl.datatypes.*;
+import cz.jvhdl.datatypes.std.StdLogicVhdl;
+import cz.jvhdl.exception.SyntaxErrorVhdl;
+import cz.jvhdl.vdhdlgenerator.VhdlWriter;
 
 /**
  *

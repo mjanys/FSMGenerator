@@ -38,6 +38,11 @@
       <artifactId>jgraphx</artifactId>
       <version>1.10.4.1</version>
     </dependency>
+    <dependency>
+      <groupId>cz.jvhdl</groupId>
+      <artifactId>jvhdl</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
     <reporting>
         <plugins>

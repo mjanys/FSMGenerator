@@ -27,8 +27,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import static cz.fsmgen.gui.cells.BlocksOutputPort.Type.*;
-import jvhdl.EntityVhdl;
-import jvhdl.datatypes.DataTypeVhdl;
+import cz.jvhdl.EntityVhdl;
+import cz.jvhdl.datatypes.DataTypeVhdl;
 
 /**
  *

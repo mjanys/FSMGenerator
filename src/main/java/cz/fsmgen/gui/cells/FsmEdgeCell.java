@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import jvhdl.VHDL;
+import cz.jvhdl.VHDL;
 
 /**
  *

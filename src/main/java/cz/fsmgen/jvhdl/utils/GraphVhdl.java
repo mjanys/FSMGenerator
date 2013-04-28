@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import jvhdl.VHDL;
+import cz.jvhdl.VHDL;
 
 /**
  *

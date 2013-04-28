@@ -21,7 +21,7 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jvhdl.VHDL;
+import cz.jvhdl.VHDL;
 
 /**
  *

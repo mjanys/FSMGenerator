@@ -21,9 +21,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import jvhdl.datatypes.DataTypeVhdl;
-import static jvhdl.datatypes.DataTypeVhdl.Std.*;
-import static jvhdl.datatypes.DataTypeVhdl.Direction.*;
+import cz.jvhdl.datatypes.DataTypeVhdl;
+import static cz.jvhdl.datatypes.DataTypeVhdl.Std.*;
+import static cz.jvhdl.datatypes.DataTypeVhdl.Direction.*;
 
 /**
  *

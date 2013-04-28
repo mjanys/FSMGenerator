@@ -13,11 +13,10 @@
  */
 package cz.fsmgen.gui.cells;
 
-import jvhdl.datatypes.DataTypeVhdl;
-import static jvhdl.datatypes.DataTypeVhdl.Std.STD_LOGIC;
-import static jvhdl.datatypes.DataTypeVhdl.Std.STD_LOGIC_VECTOR;
-import jvhdl.datatypes.std.StdLogicVectorVhdl;
-import jvhdl.datatypes.std.StdLogicVhdl;
+import cz.jvhdl.datatypes.DataTypeVhdl;
+import cz.jvhdl.datatypes.std.StdLogicVectorVhdl;
+import cz.jvhdl.datatypes.std.StdLogicVhdl;
+import static cz.jvhdl.datatypes.DataTypeVhdl.Std.*;
 
 /**
  *

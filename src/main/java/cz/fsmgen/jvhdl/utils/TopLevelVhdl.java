@@ -18,13 +18,10 @@ import com.mxgraph.model.mxICell;
 import cz.fsmgen.gui.cells.BlocksPort;
 import cz.fsmgen.gui.cells.FsmEdgeCell;
 import java.util.*;
-import jvhdl.ComponentVhdl;
-import jvhdl.EntityVhdl;
-import jvhdl.VHDL;
-import jvhdl.datatypes.DataTypeVhdl;
-import jvhdl.datatypes.SignalVhdl;
-import jvhdl.exception.InvalidVhdlTypeException;
-import jvhdl.exception.SyntaxErrorVhdl;
+import cz.jvhdl.*;
+import cz.jvhdl.datatypes.DataTypeVhdl;
+import cz.jvhdl.datatypes.SignalVhdl;
+import cz.jvhdl.exception.*;
 
 /**
  *
