@@ -40,24 +40,20 @@ import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphTransferable;
 import com.mxgraph.util.*;
 import com.mxgraph.view.mxGraph;
-import cz.fsmgen.gui.cells.BlockCell;
-import cz.fsmgen.gui.cells.BlocksOutputPort;
-import cz.fsmgen.gui.cells.BlocksPort;
-import cz.fsmgen.gui.cells.FsmEdgeCell;
-import cz.fsmgen.gui.cells.FsmFinalStateCell;
-import cz.fsmgen.gui.cells.FsmInitStateCell;
-import cz.fsmgen.gui.cells.FsmStateCell;
+
+import cz.fsmgen.gui.cells.*;
 import cz.fsmgen.gui.utils.Properties;
 import cz.fsmgen.gui.utils.PropertiesUtils;
 import cz.fsmgen.gui.utils.StringUtils;
+import cz.fsmgen.gui.cells.BlockCellWithCode;
+import static cz.fsmgen.gui.cells.BlocksOutputPort.Type.*;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Collection;
 import javax.swing.JOptionPane;
-import cz.fsmgen.gui.cells.BlockCellWithCode;
 import java.io.File;
 import javax.swing.JFileChooser;
-import static cz.fsmgen.gui.cells.BlocksOutputPort.Type.*;
 
 public class GraphEditor extends BasicGraphEditor {
 
@@ -668,8 +664,8 @@ public class GraphEditor extends BasicGraphEditor {
                 if (selected.length == 1 && selected[0] instanceof BlockCellWithCode) {
                     BlockCellWithCode b = (BlockCellWithCode) selected[0];
                     if (b.isComplete()) {
-                        GetCode dialog =
-                                new GetCode();
+                        GetCode dialog
+                                = new GetCode();
                         dialog.setCode(b.getCode());
                         dialog.setArch(b.getArchitecture());
 

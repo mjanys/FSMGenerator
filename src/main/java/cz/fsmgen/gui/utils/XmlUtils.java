@@ -18,18 +18,13 @@ import com.mxgraph.model.mxGeometry;
 import com.mxgraph.model.mxGraphModel;
 import com.mxgraph.util.mxPoint;
 import com.mxgraph.view.mxGraph;
-import cz.fsmgen.gui.GraphEditor;
-import cz.fsmgen.gui.cells.BlockCell;
-import cz.fsmgen.gui.cells.BlockCellWithCode;
-import cz.fsmgen.gui.cells.BlocksInputPort;
-import cz.fsmgen.gui.cells.BlocksOutputPort;
-import cz.fsmgen.gui.cells.BlocksPort;
-import cz.fsmgen.gui.cells.CellWithProperties;
+
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.SwingWorker;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -37,8 +32,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import cz.jvhdl.datatypes.DataTypeVhdl;
 import cz.fsmgen.jvhdl.utils.GraphVhdl;
+import cz.fsmgen.gui.GraphEditor;
+import cz.fsmgen.gui.cells.*;
+
 import org.w3c.dom.*;
 
 /**

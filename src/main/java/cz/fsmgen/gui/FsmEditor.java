@@ -21,18 +21,22 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxResources;
 import java.awt.Color;
 import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
 
 /**
  *
- * @author Martin
+ * @author Martin Janyš
  */
 public class FsmEditor extends GraphEditor {
 
     public FsmEditor() {
         this("FSM generator", new CustomGraphComponent(new CustomGraph()));
 
-        mxResources.add("resources.fsmgen");
+        mxResources.add("cz.fsmgen.resources.fsmgen");
 
     }
 
@@ -40,6 +44,7 @@ public class FsmEditor extends GraphEditor {
         super(appTitle, component);
     }
 
+    @Override
     public void show() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -53,21 +58,21 @@ public class FsmEditor extends GraphEditor {
 
         FsmEditor editor = new FsmEditor();
         editor.createFrame(new EditorMenuBar(editor)).setVisible(true);
-
-//        try {
-//            XmlUtils.Xml2Graph((CustomGraph) editor.getGraph(), new File("components.xml"));
-//            editor.getGraphComponent().getGraph().clearSelection();
-//            GraphEditor.app().getGraph().refresh();
-//        }
-//        catch (Exception ex) {
-//            Logger.getLogger(GraphEditor.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
+        
         // load component palette
-        File components = new File("./lib/components.xml");
-        if (components.exists()) {
-            EditorActions.LoadBlockAction.load(components);
+        try {
+            URL resource = FsmEditor.class.getResource("components.xml");
+            File components = new File(resource.toURI());
+
+            if (components.exists()) {
+                EditorActions.LoadBlockAction.load(components);
+            }
         }
+        catch (URISyntaxException ex) {
+            Logger.getLogger(FsmEditor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        editor.repaint();
     }
 
     public static void main(String[] args) {
