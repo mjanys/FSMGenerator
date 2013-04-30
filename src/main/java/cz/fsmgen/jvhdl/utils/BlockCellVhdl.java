@@ -273,8 +273,8 @@ public class BlockCellVhdl extends VHDL implements VhdlWriter {
         {
             If(new ConditionVhdl(new ExprVhdl(
                     RST + " = '1'")));
-            if (!block.getInitState().isEmpty()) {
-                Assignment(new SignalVhdl(pstateId, null), block.getInitState());
+            if (!block.getInitStateName().isEmpty()) {
+                Assignment(new SignalVhdl(pstateId, null), block.getInitStateName());
             }
             Elseif(new ConditionVhdl(new ExprVhdl(
                     "(" + CLK + "'event) and (" + CLK + " = '1')")));

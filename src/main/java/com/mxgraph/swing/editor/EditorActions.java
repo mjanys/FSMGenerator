@@ -73,6 +73,7 @@ import com.mxgraph.util.png.mxPngEncodeParam;
 import com.mxgraph.util.png.mxPngImageEncoder;
 import com.mxgraph.util.png.mxPngTextDecoder;
 import com.mxgraph.view.mxGraph;
+import cz.fsmgen.fsm.InaccessibleStates;
 import cz.fsmgen.gui.GraphEditor;
 import cz.fsmgen.gui.cells.BlockCell;
 import cz.fsmgen.gui.utils.XmlUtils;
@@ -2385,6 +2386,52 @@ public class EditorActions {
         public void actionPerformed(ActionEvent e) {
             GraphEditor.app().getBlocksPalette().removeAll();
             GraphEditor.app().blockPaletteInit();
+        }
+    }
+    
+    /**
+     *
+     */
+    @SuppressWarnings("serial")
+    public static class InaccessibleStatesAction extends AbstractAction {
+
+        /**
+         *
+         */
+        public void actionPerformed(ActionEvent e) {
+            mxGraph graph = mxGraphActions.getGraph(e);
+
+            if (graph instanceof GraphEditor.CustomGraph) {
+                GraphEditor.CustomGraph g = (GraphEditor.CustomGraph) graph;
+                Object currentRoot = g.getView().getCurrentRoot();
+                if (currentRoot instanceof BlockCell) {
+                    BlockCell b = (BlockCell) currentRoot;
+                    new InaccessibleStates(b).highlight();
+                }
+            }
+        }
+    }
+    
+        @SuppressWarnings("serial")
+    public static class ClearWarningsAction extends AbstractAction {
+
+        /**
+         *
+         */
+        public void actionPerformed(ActionEvent e) {
+            mxGraph graph = mxGraphActions.getGraph(e);
+
+            if (graph instanceof GraphEditor.CustomGraph) {
+                GraphEditor.CustomGraph g = (GraphEditor.CustomGraph) graph;
+                Object currentRoot = g.getView().getCurrentRoot();
+                if (currentRoot instanceof BlockCell) {
+                    BlockCell b = (BlockCell) currentRoot;
+                    for (int i = 0; i < b.getChildCount(); i++) {
+                        mxICell child = b.getChildAt(i);
+                        GraphEditor.app().getGraphComponent().setCellWarning(child, "");
+                    }
+                }
+            }
         }
     }
 }

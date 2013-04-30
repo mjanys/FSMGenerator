@@ -190,8 +190,8 @@ public class BlockCell extends CellWithProperties {
 
             GraphEditor.app().getGraph().removeCells(
                     inRest.toArray());
-        }
-        // add pins
+        }        // add pins
+
         else {
             inHead = in;
             for (int i = oldInCount; i < newInCount; i++) {
@@ -206,8 +206,8 @@ public class BlockCell extends CellWithProperties {
 
             GraphEditor.app().getGraph().removeCells(
                     outRest.toArray());
-        }
-        // add pins
+        }        // add pins
+
         else {
             outHead = out;
             for (int i = oldOutCount; i < newOutCount; i++) {
@@ -368,13 +368,17 @@ public class BlockCell extends CellWithProperties {
         }
     }
 
-    public String getInitState() {
+    public String getInitStateName() {
+        return getInitState().getName();
+    }
+
+    public FsmInitStateCell getInitState() {
         for (int i = 0; i < getChildCount(); i++) {
             if (getChildAt(i) instanceof FsmInitStateCell) {
-                return ((FsmInitStateCell) getChildAt(i)).getName();
+                return ((FsmInitStateCell) getChildAt(i));
             }
         }
-        return "";
+        return null;
     }
 
     public void toEntity(EntityVhdl e) {

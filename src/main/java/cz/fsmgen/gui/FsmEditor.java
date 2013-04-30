@@ -19,13 +19,16 @@ import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxSwingConstants;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxResources;
+import static cz.fsmgen.gui.utils.XmlUtils.Xml2Graph;
 import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
+import org.codehaus.plexus.util.FileUtils;
 
 /**
  *
@@ -44,6 +47,17 @@ public class FsmEditor extends GraphEditor {
         super(appTitle, component);
     }
 
+    private void copyComponentsOut() {
+        try {
+            URL resource = FsmEditor.class.getResource("components.xml");
+            File dest = new File("./components.xml");
+            FileUtils.copyURLToFile(resource, dest);
+        }
+        catch (IOException ex) {
+            Logger.getLogger(FsmEditor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @Override
     public void show() {
         try {
@@ -57,21 +71,21 @@ public class FsmEditor extends GraphEditor {
         mxConstants.W3C_SHADOWCOLOR = "#D3D3D3";
 
         FsmEditor editor = new FsmEditor();
+        
+        Xml2Graph((GraphEditor.CustomGraph) editor.getGraph(), new File("./UnavailableStates.xml"));
+        
         editor.createFrame(new EditorMenuBar(editor)).setVisible(true);
-        
-        // load component palette
-        try {
-            URL resource = FsmEditor.class.getResource("components.xml");
-            File components = new File(resource.toURI());
 
-            if (components.exists()) {
-                EditorActions.LoadBlockAction.load(components);
-            }
+        // load component palette
+        File components = new File("./components.xml");
+
+        if (!components.exists()) {
+            copyComponentsOut();
         }
-        catch (URISyntaxException ex) {
-            Logger.getLogger(FsmEditor.class.getName()).log(Level.SEVERE, null, ex);
+        if (components.exists()) {
+            EditorActions.LoadBlockAction.load(components);
         }
-        
+
         editor.repaint();
     }
 

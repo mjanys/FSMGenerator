@@ -41,7 +41,27 @@ public class EditorMenuBar extends JMenuBar {
 
     public enum AnalyzeType {
 
-        IS_CONNECTED, IS_SIMPLE, IS_CYCLIC_DIRECTED, IS_CYCLIC_UNDIRECTED, COMPLEMENTARY, REGULARITY, COMPONENTS, MAKE_CONNECTED, MAKE_SIMPLE, IS_TREE, ONE_SPANNING_TREE, IS_DIRECTED, GET_CUT_VERTEXES, GET_CUT_EDGES, GET_SOURCES, GET_SINKS, PLANARITY, IS_BICONNECTED, GET_BICONNECTED, SPANNING_TREE, FLOYD_ROY_WARSHALL
+        IS_CONNECTED,
+        IS_SIMPLE,
+        IS_CYCLIC_DIRECTED,
+        IS_CYCLIC_UNDIRECTED,
+        COMPLEMENTARY,
+        REGULARITY,
+        COMPONENTS,
+        MAKE_CONNECTED,
+        MAKE_SIMPLE,
+        IS_TREE,
+        ONE_SPANNING_TREE,
+        IS_DIRECTED,
+        GET_CUT_VERTEXES,
+        GET_CUT_EDGES,
+        GET_SOURCES,
+        GET_SINKS,
+        PLANARITY,
+        IS_BICONNECTED,
+        GET_BICONNECTED,
+        SPANNING_TREE,
+        FLOYD_ROY_WARSHALL
     }
 
     public EditorMenuBar(final BasicGraphEditor editor) {
@@ -64,10 +84,10 @@ public class EditorMenuBar extends JMenuBar {
         menu.add(editor.bind(mxResources.get("saveAs"), new SaveAction(true), "/com/mxgraph/swing/images/saveas.gif"));
 
         menu.addSeparator();
-        
+
         menu.add(editor.bind("Import blocks ...", new LoadBlockAction(editor), "/com/mxgraph/swing/images/open.gif"));
         menu.add(editor.bind("Clear block palette", new ClearPalette((GraphEditor) editor), null));
-        
+
         menu.addSeparator();
 
         menu.add(editor.bind(mxResources.get("pageSetup"), new PageSetupAction(), "/com/mxgraph/swing/images/pagesetup.gif"));
@@ -102,7 +122,6 @@ public class EditorMenuBar extends JMenuBar {
 //
 //        menu.add(editor.bind(mxResources.get("warning"), new WarningAction()));
 //        menu.add(editor.bind(mxResources.get("edit"), mxGraphActions.getEditAction()));
-
         // Creates the view menu
         JMenuItem item;
 
@@ -119,7 +138,6 @@ public class EditorMenuBar extends JMenuBar {
         submenu.add(editor.bind(mxResources.get("dot"), new GridStyleAction(mxGraphComponent.GRID_STYLE_DOT)));
         submenu.add(editor.bind(mxResources.get("line"), new GridStyleAction(mxGraphComponent.GRID_STYLE_LINE)));
         submenu.add(editor.bind(mxResources.get("cross"), new GridStyleAction(mxGraphComponent.GRID_STYLE_CROSS)));
-
 
         menu.add(new ToggleRulersItem(editor, mxResources.get("rulers")));
 
@@ -144,16 +162,12 @@ public class EditorMenuBar extends JMenuBar {
         menu.add(editor.bind(mxResources.get("zoomOut"), mxGraphActions.getZoomOutAction()));
 
 //        menu.addSeparator();
-
 //        menu.add(editor.bind(mxResources.get("page"), new ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_PAGE)));
 //        menu.add(editor.bind(mxResources.get("width"), new ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_WIDTH)));
 //
 //        menu.addSeparator();
-
 //        menu.add(editor.bind(mxResources.get("actualSize"), mxGraphActions.getZoomActualAction()));
-
 //        menu.add(new TogglePropertyItem(graphComponent, mxResources.get("antialias"), "AntiAlias", true));
-
         // Creates the format menu
         menu = add(new JMenu(mxResources.get("format")));
 
@@ -167,6 +181,13 @@ public class EditorMenuBar extends JMenuBar {
         // Creates the diagram menu
         menu = add(new JMenu(mxResources.get("diagram")));
 
+        submenu = (JMenu) menu.add(new JMenu(mxResources.get("analyze")));
+        submenu.add(editor.bind(mxResources.get("clrWarns"), new ClearWarningsAction()));
+        submenu.addSeparator();
+        submenu.add(editor.bind(mxResources.get("inaccessibleStates"), new InaccessibleStatesAction()));
+        
+        menu.addSeparator();
+
         menu.add(new ToggleOutlineItem(editor, mxResources.get("outline")));
 
         menu.addSeparator();
@@ -179,7 +200,6 @@ public class EditorMenuBar extends JMenuBar {
 //        submenu.addSeparator();
 //
 //        submenu.add(editor.bind(mxResources.get("pageBackground"), new PageBackgroundAction()));
-
         menu.addSeparator();
 
         submenu = (JMenu) menu.add(new JMenu(mxResources.get("layout")));
@@ -198,7 +218,6 @@ public class EditorMenuBar extends JMenuBar {
 //        submenu.add(editor.graphLayout("parallelEdges", false));
 //
 //        submenu.addSeparator();
-
         submenu.add(editor.graphLayout("organicLayout", true));
         submenu.add(editor.graphLayout("circleLayout", true));
 
@@ -220,7 +239,6 @@ public class EditorMenuBar extends JMenuBar {
 //                new StylesheetAction("/com/mxgraph/swing/resources/basic-style.xml")));
 //        submenu.add(editor.bind(mxResources.get("defaultStyle"), new StylesheetAction(
 //                "/com/mxgraph/swing/resources/default-style.xml")));
-
         // Creates the options menu
         menu = add(new JMenu(mxResources.get("options")));
 
@@ -239,7 +257,6 @@ public class EditorMenuBar extends JMenuBar {
         // TODO: This feature is not yet implemented
         //submenu.add(new TogglePropertyItem(graphComponent, mxResources
         //		.get("pageBreaks"), "PageBreaksVisible", true));
-
         submenu.addSeparator();
 
         submenu.add(editor.bind(mxResources.get("tolerance"), new PromptPropertyAction(graphComponent, "Tolerance")));
@@ -290,31 +307,25 @@ public class EditorMenuBar extends JMenuBar {
         submenu.add(new TogglePropertyItem(graphComponent, mxResources.get("handleReturn"), "EnterStopsCellEditing"));
 
 //        menu.addSeparator();
-
 //        submenu = (JMenu) menu.add(new JMenu(mxResources.get("connections")));
 //
 //        submenu.add(new TogglePropertyItem(graphComponent, mxResources.get("connectable"), "Connectable"));
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("connectableEdges"), "ConnectableEdges"));
-
 //        submenu.addSeparator();
-
 //        submenu.add(new ToggleCreateTargetItem(editor, mxResources.get("createTarget")));
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("disconnectOnMove"), "DisconnectOnMove"));
 //
 //        submenu.addSeparator();
-
 //        submenu.add(editor.bind(mxResources.get("connectMode"), new ToggleConnectModeAction()));
 //
 //        submenu = (JMenu) menu.add(new JMenu(mxResources.get("validation")));
 //
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("allowDanglingEdges"), "AllowDanglingEdges"));
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("cloneInvalidEdges"), "CloneInvalidEdges"));
-
 //        submenu.addSeparator();
 //
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("allowLoops"), "AllowLoops"));
 //        submenu.add(new TogglePropertyItem(graph, mxResources.get("multigraph"), "Multigraph"));
-
         add(Box.createHorizontalGlue());
         // Creates the window menu
 //        menu = add(new JMenu(mxResources.get("window")));
@@ -357,7 +368,6 @@ public class EditorMenuBar extends JMenuBar {
 //        menu.add(editor.bind("Simple Random Tree", new InsertGraph(GraphType.SIMPLE_RANDOM_TREE, aGraph)));
 //        menu.addSeparator();
 //        menu.add(editor.bind("Reset Style", new InsertGraph(GraphType.RESET_STYLE, aGraph)));
-
 //        menu = add(new JMenu("Analyze"));
 //        menu.add(editor.bind("Is Connected", new AnalyzeGraph(AnalyzeType.IS_CONNECTED, aGraph)));
 //        menu.add(editor.bind("Is Simple", new AnalyzeGraph(AnalyzeType.IS_SIMPLE, aGraph)));
@@ -387,10 +397,9 @@ public class EditorMenuBar extends JMenuBar {
 //        menu.add(editor.bind("Get sources", new AnalyzeGraph(AnalyzeType.GET_SOURCES, aGraph)));
 //        menu.add(editor.bind("Get sinks", new AnalyzeGraph(AnalyzeType.GET_SINKS, aGraph)));
 //        menu.add(editor.bind("Is biconnected", new AnalyzeGraph(AnalyzeType.IS_BICONNECTED, aGraph)));
-
         // Creates the help menu
         menu = add(new JMenu(mxResources.get("help")));
-  
+
         item = menu.add(new JMenuItem(mxResources.get("aboutGraphEditor")));
         item.addActionListener(new ActionListener() {
             /*
@@ -402,7 +411,7 @@ public class EditorMenuBar extends JMenuBar {
                 editor.about();
             }
         });
-        
+
         item = menu.add(new JMenuItem("About FSM Generator"));
         item.addActionListener(new ActionListener() {
             /*
@@ -413,8 +422,8 @@ public class EditorMenuBar extends JMenuBar {
             public void actionPerformed(ActionEvent e) {
                 Frame f = (Frame) SwingUtilities.windowForComponent(editor);
                 HelpDialog helpDialog = new HelpDialog(
-                                                f, 
-                                                false);
+                        f,
+                        false);
                 helpDialog.setLocationRelativeTo(f);
                 helpDialog.setVisible(true);
             }
@@ -610,7 +619,6 @@ public class EditorMenuBar extends JMenuBar {
 //
 //        submenu.add(editor.bind(mxResources.get("none"), new KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.NONE)));
 //        submenu.add(editor.bind(mxResources.get("size"), new PromptValueAction(mxConstants.STYLE_ENDSIZE, "Lineend Size")));
-
         menu.addSeparator();
 
         submenu = (JMenu) menu.add(new JMenu(mxResources.get("alignment")));
@@ -664,7 +672,6 @@ public class EditorMenuBar extends JMenuBar {
 //        submenu.addSeparator();
 //
 //        submenu.add(editor.bind(mxResources.get("rotation"), new PromptValueAction(mxConstants.STYLE_ROTATION, "Rotation (0-360)")));
-
         menu.addSeparator();
 
         menu.add(editor.bind(mxResources.get("rounded"), new ToggleAction(mxConstants.STYLE_ROUNDED)));
