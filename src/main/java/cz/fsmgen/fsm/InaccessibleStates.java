@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @author Martin
  */
-public class InaccessibleStates {
+public class InaccessibleStates implements HighlightWarnings {
 
     private final BlockCell fsmBlock;
     private final List<FsmStateCell> avaibleStates = new ArrayList();
@@ -45,7 +45,7 @@ public class InaccessibleStates {
     private void spill(FsmStateCell state) {
         avaibleStates.add(state);
         for (FsmEdgeCell edge : state.getEdgesFrom()) {
-            System.out.println(edge);
+           
             mxICell target = edge.getTarget();
             if (!avaibleStates.contains(target) && target instanceof FsmStateCell) {
                 spill((FsmStateCell) target);
@@ -55,7 +55,7 @@ public class InaccessibleStates {
 
     public void highlight() {
         spillAlgorithm();
-        System.out.println(avaibleStates);
+        
         for (int i = 0; i < fsmBlock.getChildCount(); i++) {
             mxCell child = (mxCell) fsmBlock.getChildAt(i);
             if (child instanceof FsmStateCell) {

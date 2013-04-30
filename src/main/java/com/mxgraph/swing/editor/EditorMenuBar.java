@@ -185,6 +185,9 @@ public class EditorMenuBar extends JMenuBar {
         submenu.add(editor.bind(mxResources.get("clrWarns"), new ClearWarningsAction()));
         submenu.addSeparator();
         submenu.add(editor.bind(mxResources.get("inaccessibleStates"), new InaccessibleStatesAction()));
+        submenu.add(editor.bind(mxResources.get("nontermStates"), new NonterminatingStatesAction()));
+        submenu.add(editor.bind(mxResources.get("eps"), new EpsilonTransitionAction()));
+        submenu.add(editor.bind(mxResources.get("deterTrans"), new DeterminicticTransitionAction()));
         
         menu.addSeparator();
 

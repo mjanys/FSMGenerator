@@ -127,6 +127,21 @@ public class FsmStateCell extends CellWithProperties implements Comparable<FsmSt
         return edgeList;
     }
 
+    public List<FsmEdgeCell> getEdgesTo() {
+        List<FsmEdgeCell> edgeList = new ArrayList<>();
+
+        for (int i = 0; i < getEdgeCount(); i++) {
+            if (getEdgeAt(i) instanceof FsmEdgeCell) {
+                FsmEdgeCell e = (FsmEdgeCell) getEdgeAt(i);
+                if (e.getTarget() == this) {
+                    edgeList.add(e);
+                }
+            }
+        }
+
+        return edgeList;
+    }
+
     @Override
     public int compareTo(FsmStateCell o) {
 

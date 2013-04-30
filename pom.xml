@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
 
     <name>FSMGenerator</name>
-    <url>http://maven.apache.org</url>
+    <url></url>
     <build>
         <plugins>
             <plugin>
@@ -40,6 +40,7 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <addClasspath>true</addClasspath>
                             <mainClass>cz.fsmgen.gui.FsmEditor</mainClass>
                         </manifest>
                     </archive>

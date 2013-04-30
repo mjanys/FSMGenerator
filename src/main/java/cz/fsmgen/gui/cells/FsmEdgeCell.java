@@ -16,11 +16,14 @@ package cz.fsmgen.gui.cells;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.model.mxGraphModel;
+
+import cz.jvhdl.VHDL;
 import cz.fsmgen.gui.GraphEditor;
+import cz.fsmgen.gui.utils.StringUtils;
 import static cz.fsmgen.gui.cells.CellWithProperties.initValues;
 import static cz.fsmgen.gui.cells.CellWithProperties.maxVisibleLen;
 import static cz.fsmgen.gui.cells.FsmStateCell.getInitValues;
-import cz.fsmgen.gui.utils.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,7 +33,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import cz.jvhdl.VHDL;
 
 /**
  *
@@ -78,7 +80,7 @@ public class FsmEdgeCell extends CellWithProperties {
         return this.propertiesFields;
     }
 
-    private String output() {
+    public String output() {
         StringBuilder out = new StringBuilder();
 
         if (getParent() instanceof BlockCell) {
@@ -120,7 +122,7 @@ public class FsmEdgeCell extends CellWithProperties {
         return out.toString();
     }
 
-    private String input() {
+    public String input() {
         StringBuilder in = new StringBuilder();
 
         if (getParent() instanceof BlockCell) {

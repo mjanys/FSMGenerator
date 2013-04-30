@@ -73,7 +73,10 @@ import com.mxgraph.util.png.mxPngEncodeParam;
 import com.mxgraph.util.png.mxPngImageEncoder;
 import com.mxgraph.util.png.mxPngTextDecoder;
 import com.mxgraph.view.mxGraph;
+import cz.fsmgen.fsm.DeterminicticTransition;
+import cz.fsmgen.fsm.EpsilonTransition;
 import cz.fsmgen.fsm.InaccessibleStates;
+import cz.fsmgen.fsm.NonterminatingStates;
 import cz.fsmgen.gui.GraphEditor;
 import cz.fsmgen.gui.cells.BlockCell;
 import cz.fsmgen.gui.utils.XmlUtils;
@@ -2388,7 +2391,7 @@ public class EditorActions {
             GraphEditor.app().blockPaletteInit();
         }
     }
-    
+
     /**
      *
      */
@@ -2411,8 +2414,74 @@ public class EditorActions {
             }
         }
     }
-    
-        @SuppressWarnings("serial")
+
+    /**
+     *
+     */
+    @SuppressWarnings("serial")
+    public static class NonterminatingStatesAction extends AbstractAction {
+
+        /**
+         *
+         */
+        public void actionPerformed(ActionEvent e) {
+            mxGraph graph = mxGraphActions.getGraph(e);
+
+            if (graph instanceof GraphEditor.CustomGraph) {
+                GraphEditor.CustomGraph g = (GraphEditor.CustomGraph) graph;
+                Object currentRoot = g.getView().getCurrentRoot();
+                if (currentRoot instanceof BlockCell) {
+                    BlockCell b = (BlockCell) currentRoot;
+                    new NonterminatingStates(b).highlight();
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     */
+    @SuppressWarnings("serial")
+    public static class DeterminicticTransitionAction extends AbstractAction {
+
+        /**
+         *
+         */
+        public void actionPerformed(ActionEvent e) {
+            mxGraph graph = mxGraphActions.getGraph(e);
+
+            if (graph instanceof GraphEditor.CustomGraph) {
+                GraphEditor.CustomGraph g = (GraphEditor.CustomGraph) graph;
+                Object currentRoot = g.getView().getCurrentRoot();
+                if (currentRoot instanceof BlockCell) {
+                    BlockCell b = (BlockCell) currentRoot;
+                    new DeterminicticTransition(b).highlight();
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("serial")
+    public static class EpsilonTransitionAction extends AbstractAction {
+
+        /**
+         *
+         */
+        public void actionPerformed(ActionEvent e) {
+            mxGraph graph = mxGraphActions.getGraph(e);
+
+            if (graph instanceof GraphEditor.CustomGraph) {
+                GraphEditor.CustomGraph g = (GraphEditor.CustomGraph) graph;
+                Object currentRoot = g.getView().getCurrentRoot();
+                if (currentRoot instanceof BlockCell) {
+                    BlockCell b = (BlockCell) currentRoot;
+                    new EpsilonTransition(b).highlight();
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("serial")
     public static class ClearWarningsAction extends AbstractAction {
 
         /**

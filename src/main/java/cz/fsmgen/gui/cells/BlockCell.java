@@ -381,6 +381,16 @@ public class BlockCell extends CellWithProperties {
         return null;
     }
 
+    public List<FsmFinalStateCell> getFinState() {
+        List<FsmFinalStateCell> l = new ArrayList<>();
+        for (int i = 0; i < getChildCount(); i++) {
+            if (getChildAt(i) instanceof FsmFinalStateCell) {
+                l.add((FsmFinalStateCell) getChildAt(i));
+            }
+        }
+        return l;
+    }
+
     public void toEntity(EntityVhdl e) {
         fsmChilds.clear();
         for (int i = 0; i < getChildCount(); i++) {
@@ -435,4 +445,5 @@ public class BlockCell extends CellWithProperties {
         createPortsList();
         return getPortByName("") == null;
     }
+
 }

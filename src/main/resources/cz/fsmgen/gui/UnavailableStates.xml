@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fsmgenGraph>
+  <cell defaultParent="1">
+    <cell class="cz.fsmgen.gui.cells.BlockCell" id="28" value="fsm">
+      <geo height="30.0" width="150.0" x="150.0" y="130.0"/>
+      <properties inputsCount="0" outputsCount="0" style="editable=false;resizable=false;editable=true" value="fsm"/>
+      <cell class="cz.fsmgen.gui.cells.FsmInitStateCell" id="35" value="S1">
+        <geo height="50.0" width="50.0" x="140.0" y="60.0"/>
+        <properties name="S1" outputs="" style="ellipse;shape=ellipse;fillColor=#E0E0E0;edgeStyle=connector;editable=false;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="36" value="S2">
+        <geo height="50.0" width="50.0" x="140.0" y="250.0"/>
+        <properties name="S2" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="37" value="">
+        <edge source="35" target="36"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="38" value="S3">
+        <geo height="50.0" width="50.0" x="310.0" y="120.0"/>
+        <properties name="S3" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="39" value="">
+        <edge source="36" target="38"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="40" value="S4">
+        <geo height="50.0" width="50.0" x="310.0" y="340.0"/>
+        <properties name="S4" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="41" value="">
+        <edge source="38" target="40"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="43" value="X1">
+        <geo height="50.0" width="50.0" x="90.0" y="440.0"/>
+        <properties name="X1" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="44" value="">
+        <edge source="43" target="36"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="45" value="X3">
+        <geo height="50.0" width="50.0" x="240.0" y="460.0"/>
+        <properties name="X3" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="46" value="">
+        <edge source="43" target="45"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmStateCell" id="47" value="X2">
+        <geo height="50.0" width="50.0" x="30.0" y="260.0"/>
+        <properties name="X2" outputs="" style="ellipse;editable=false"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.FsmEdgeCell" edge="1" id="48" value="">
+        <edge source="47" target="43"/>
+        <geo height="120.0" width="120.0" x="0.0" y="0.0"/>
+        <properties inputs="" outputs="" style="straight;rounded=1;editable=false;labelBorderColor=#000000;"/>
+      </cell>
+    </cell>
+  </cell>
+</fsmgenGraph>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fsmgenGraph>
+  <cell defaultParent="1">
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="11" value="AND_Gate">
+      <geo height="60.0" width="150.0" x="30.0" y="30.0"/>
+      <code/>
+      <arch>O &lt;= IN1 and IN2;</arch>
+      <properties inputsCount="2" outputsCount="1" style="editable=false;resizable=false;editable=true" value="AND_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="12" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.3333333333333333"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="13" value="IN2">
+        <geo height="15.0" width="15.0" x="0.0" y="0.6666666666666666"/>
+        <properties defaultValue="" name="IN2" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="14" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="15" value="OR_Gate">
+      <geo height="60.0" width="150.0" x="220.0" y="30.0"/>
+      <code/>
+      <arch>O &lt;= IN1 or IN2;</arch>
+      <properties inputsCount="2" outputsCount="1" style="editable=false;resizable=false;editable=true" value="OR_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="16" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.3333333333333333"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="17" value="IN2">
+        <geo height="15.0" width="15.0" x="0.0" y="0.6666666666666666"/>
+        <properties defaultValue="" name="IN2" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="18" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="19" value="NAND_Gate">
+      <geo height="60.0" width="150.0" x="30.0" y="120.0"/>
+      <code/>
+      <arch>O &lt;= IN1 nand IN2;</arch>
+      <properties inputsCount="2" outputsCount="1" style="editable=false;resizable=false;editable=true" value="NAND_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="20" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.3333333333333333"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="21" value="IN2">
+        <geo height="15.0" width="15.0" x="0.0" y="0.6666666666666666"/>
+        <properties defaultValue="" name="IN2" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="22" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="23" value="NOR_Gate">
+      <geo height="60.0" width="150.0" x="220.0" y="120.0"/>
+      <code>O &lt;= IN1 nor IN2;</code>
+      <arch>O &lt;= IN1 nor IN2;</arch>
+      <properties inputsCount="2" outputsCount="1" style="editable=false;resizable=false;editable=true" value="NOR_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="24" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.3333333333333333"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="25" value="IN2">
+        <geo height="15.0" width="15.0" x="0.0" y="0.6666666666666666"/>
+        <properties defaultValue="" name="IN2" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="26" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="27" value="XOR_Gate">
+      <geo height="60.0" width="150.0" x="30.0" y="210.0"/>
+      <code>O &lt;= IN1 xor IN2;</code>
+      <arch>O &lt;= IN1 xor IN2;</arch>
+      <properties inputsCount="2" outputsCount="1" style="editable=false;resizable=false;editable=true" value="XOR_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="28" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.3333333333333333"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="29" value="IN2">
+        <geo height="15.0" width="15.0" x="0.0" y="0.6666666666666666"/>
+        <properties defaultValue="" name="IN2" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="30" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+    <cell class="cz.fsmgen.gui.cells.BlockCellWithCode" id="31" value="NOT_Gate">
+      <geo height="30.0" width="150.0" x="220.0" y="230.0"/>
+      <code/>
+      <arch>O &lt;= not IN1;</arch>
+      <properties inputsCount="1" outputsCount="1" style="editable=false;resizable=false;editable=true" value="NOT_Gate"/>
+      <cell class="cz.fsmgen.gui.cells.BlocksInputPort" id="32" value="IN1">
+        <geo height="15.0" width="15.0" x="0.0" y="0.5"/>
+        <properties defaultValue="" name="IN1" style="align=right;labelPosition=left;editable=true" type="STD_LOGIC"/>
+      </cell>
+      <cell class="cz.fsmgen.gui.cells.BlocksOutputPort" id="33" value="O">
+        <geo height="15.0" width="15.0" x="1.0" y="0.5"/>
+        <properties defaultValue="" name="O" outputType="MEALY" style="align=left;labelPosition=right;editable=true" type="STD_LOGIC"/>
+      </cell>
+    </cell>
+  </cell>
+</fsmgenGraph>

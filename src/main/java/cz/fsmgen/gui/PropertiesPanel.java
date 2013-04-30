@@ -132,7 +132,7 @@ public class PropertiesPanel extends javax.swing.JPanel {
             @Override
             public Object getCellEditorValue() {
                 try {
-                    setValueFor(currentInstance, (String) field, super.getCellEditorValue());
+                    setValueFor(currentInstance, (String) field, super.getCellEditorValue().toString().trim());
                 }
                 catch (Throwable e) {
                     return getValueFor(currentInstance, (String) field);
