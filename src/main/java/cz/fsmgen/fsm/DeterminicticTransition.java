@@ -26,6 +26,7 @@ public class DeterminicticTransition implements HighlightWarnings {
         this.fsmBlock = fsmBlock;
     }
 
+    @Override
     public void highlight() {
         for (int i = 0; i < fsmBlock.getChildCount(); i++) {
             mxICell child = fsmBlock.getChildAt(i);
@@ -38,10 +39,9 @@ public class DeterminicticTransition implements HighlightWarnings {
                         int index = edges.indexOf(e);
                         for (int j = 0; j < edgeConds.size(); j++) {
                             if (edgeConds.get(j).equals(input)) {
-
                                 if (edges.get(j).getSource() == e.getSource()) {
-                                    GraphEditor.app().getGraphComponent().setCellWarning(e, "Multiplicative transition");
-                                    GraphEditor.app().getGraphComponent().setCellWarning(edges.get(j), "Multiplicative transition");
+                                    GraphEditor.app().getGraphComponent().setCellWarning(e, "Multiple occurrence of transition condition");
+                                    GraphEditor.app().getGraphComponent().setCellWarning(edges.get(j), "Multiple occurrence of transition condition");
                                 }
                             }
                         }

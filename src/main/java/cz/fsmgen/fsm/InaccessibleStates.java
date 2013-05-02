@@ -44,8 +44,7 @@ public class InaccessibleStates implements HighlightWarnings {
 
     private void spill(FsmStateCell state) {
         avaibleStates.add(state);
-        for (FsmEdgeCell edge : state.getEdgesFrom()) {
-           
+        for (FsmEdgeCell edge : state.getEdgesFrom()) {     
             mxICell target = edge.getTarget();
             if (!avaibleStates.contains(target) && target instanceof FsmStateCell) {
                 spill((FsmStateCell) target);
