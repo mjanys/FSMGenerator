@@ -72,7 +72,7 @@ public class FsmEditor extends GraphEditor {
 
         FsmEditor editor = new FsmEditor();
         
-        Xml2Graph((GraphEditor.CustomGraph) editor.getGraph(), new File("e:/_Skola/IBP/CD/Program/examples/nonDeterministic.xml"));
+//        Xml2Graph((GraphEditor.CustomGraph) editor.getGraph(), new File("e:/_Skola/IBP/CD/Program/examples/nonDeterministic.xml"));
         
         editor.createFrame(new EditorMenuBar(editor)).setVisible(true);
 
