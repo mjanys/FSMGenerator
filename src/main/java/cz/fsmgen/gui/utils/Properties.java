@@ -14,8 +14,9 @@
 package cz.fsmgen.gui.utils;
 
 /**
- *
- * @author Martin
+ * Interface for accesing properties.
+ * 
+ * @author Martin Janyš
  */
 public interface Properties {
     

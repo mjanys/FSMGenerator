@@ -25,7 +25,9 @@ import cz.jvhdl.exception.*;
 
 /**
  *
- * @author Martin
+ * Class provides functions to create top level file.
+ * 
+ * @author Martin Janyš
  */
 public class TopLevelVhdl extends VHDL {
 

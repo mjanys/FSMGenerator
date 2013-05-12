@@ -25,7 +25,9 @@ import java.util.List;
 
 /**
  *
- * @author Martin
+ * Class methods highlights inaccessible states.
+ * 
+ * @author Martin Janyš
  */
 public class InaccessibleStates implements HighlightWarnings {
 

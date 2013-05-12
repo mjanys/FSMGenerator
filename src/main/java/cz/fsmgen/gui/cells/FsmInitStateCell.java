@@ -14,8 +14,9 @@
 package cz.fsmgen.gui.cells;
 
 /**
- *
- * @author Martin
+ * Class represents init states.
+ * 
+ * @author Martin Janyš
  */
 public class FsmInitStateCell extends FsmStateCell {
 

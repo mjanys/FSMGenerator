@@ -36,7 +36,9 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author Martin
+ * Class represents edges.
+ * 
+ * @author Martin Janyš
  */
 public class FsmEdgeCell extends CellWithProperties {
 

@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * VYSOKÉ UČENÍ TECHNICKÉ V BRNĚ BRNO UNIVERSITY OF TECHNOLOGY
+ *
+ * FAKULTA INFORMAČNÍCH TECHNOLOGIÍ
+ *
+ * Baklářská práce
+ *
+ * Generátor konečných automatů z grafického popisu pro jazyk VHDL
+ *
+ * Author: Martin Janyš
+ *
+ * Brno 2013
  */
 
 package cz.fsmgen.fsm;
@@ -11,8 +20,9 @@ import cz.fsmgen.gui.cells.BlockCell;
 import cz.fsmgen.gui.cells.FsmEdgeCell;
 
 /**
- *
- * @author Martin
+ * Class methods highlights empty transitions.
+ * 
+ * @author Martin Janyš
  */
 public class EpsilonTransition implements HighlightWarnings {
 

@@ -32,7 +32,9 @@ import cz.jvhdl.datatypes.DataTypeVhdl;
 
 /**
  *
- * @author Martin
+ * BlockCell is class of graphical cell which represents chip or block.
+ * 
+ * @author Martin Janyš
  */
 public class BlockCell extends CellWithProperties {
 
@@ -163,8 +165,7 @@ public class BlockCell extends CellWithProperties {
                 ((BlocksPort) child).setDeletable(true);
                 if (((BlocksPort) child).site == BlocksPort.LEFT) {
                     in.add(child);
-                }
-                else if (((BlocksPort) child).site == BlocksPort.RIGHT) {
+                } else if (((BlocksPort) child).site == BlocksPort.RIGHT) {
                     out.add(child);
                 }
             }
@@ -190,8 +191,7 @@ public class BlockCell extends CellWithProperties {
 
             GraphEditor.app().getGraph().removeCells(
                     inRest.toArray());
-        }        // add pins
-
+        } // add pins
         else {
             inHead = in;
             for (int i = oldInCount; i < newInCount; i++) {
@@ -206,8 +206,7 @@ public class BlockCell extends CellWithProperties {
 
             GraphEditor.app().getGraph().removeCells(
                     outRest.toArray());
-        }        // add pins
-
+        } // add pins
         else {
             outHead = out;
             for (int i = oldOutCount; i < newOutCount; i++) {
@@ -344,8 +343,7 @@ public class BlockCell extends CellWithProperties {
             if (child instanceof BlocksInputPort) {
                 child.setValue(inputPorts.get(i).getValue());
                 i++;
-            }
-            else if (child instanceof BlocksOutputPort) {
+            } else if (child instanceof BlocksOutputPort) {
                 child.setValue(outputPorts.get(j).getValue());
                 j++;
             }
@@ -361,15 +359,17 @@ public class BlockCell extends CellWithProperties {
             mxICell child = getChildAt(i);
             if (child instanceof BlocksInputPort) {
                 inputsList.add((BlocksPort) child);
-            }
-            else if (child instanceof BlocksOutputPort) {
+            } else if (child instanceof BlocksOutputPort) {
                 outputsList.add((BlocksPort) child);
             }
         }
     }
 
     public String getInitStateName() {
-        return getInitState().getName();
+        if (getInitState() != null) {
+            return getInitState().getName();
+        }
+        return "";
     }
 
     public FsmInitStateCell getInitState() {
@@ -400,12 +400,10 @@ public class BlockCell extends CellWithProperties {
                 try {
                     DataTypeVhdl var = p.getStdLogic();
                     e.put(p.getValue().toString(), var);
-                }
-                catch (Throwable t) {
+                } catch (Throwable t) {
                     t.printStackTrace();
                 }
-            }
-            else {
+            } else {
                 if (child instanceof FsmStateCell) {
                     fsmChilds.add((FsmStateCell) child);
                 }
@@ -445,5 +443,4 @@ public class BlockCell extends CellWithProperties {
         createPortsList();
         return getPortByName("") == null;
     }
-
 }

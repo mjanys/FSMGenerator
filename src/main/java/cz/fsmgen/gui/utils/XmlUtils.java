@@ -42,7 +42,9 @@ import org.w3c.dom.*;
 
 /**
  *
- * @author Martin
+ * Ustils for work with XML (serialize and deserialize)
+ * 
+ * @author Martin Janyš
  */
 public class XmlUtils {
 

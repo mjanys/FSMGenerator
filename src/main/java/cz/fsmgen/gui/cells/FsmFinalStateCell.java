@@ -15,7 +15,9 @@ package cz.fsmgen.gui.cells;
 
 /**
  *
- * @author Martin
+ * Class represents final states.
+ * 
+ * @author Martin Janyš
  */
 public class FsmFinalStateCell extends FsmStateCell {
 

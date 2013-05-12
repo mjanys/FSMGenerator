@@ -25,7 +25,9 @@ import cz.jvhdl.VHDL;
 
 /**
  *
- * @author Martin
+ * Converts BlockCellWithCode to VHDL object.
+ * 
+ * @author Martin Janyš
  */
 public class BlockCellCodeVhdl extends BlockCellVhdl {
 

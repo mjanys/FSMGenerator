@@ -20,8 +20,10 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Martin
+ * Information panel. 
+ * Panel contains table with ports and number of bits.
+ * 
+ * @author Martin Janyš
  */
 public class InfoPanel extends PropertiesPanel {
 

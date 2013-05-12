@@ -22,10 +22,15 @@ import static cz.jvhdl.datatypes.DataTypeVhdl.Std.STD_LOGIC_VECTOR;
 
 /**
  *
- * @author Martin
+ * Class represents output pin/port.
+ * 
+ * @author Martin Janyš
  */
 public class BlocksOutputPort extends BlocksPort implements Cloneable {
 
+    /**
+     * Type of output.
+     */
     public enum Type {
 
         MOORE,

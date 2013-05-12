@@ -26,7 +26,9 @@ import cz.jvhdl.VHDL;
 
 /**
  *
- * @author Martin
+ * In this class starts process of corventing to VHDL.
+ * 
+ * @author Martin Janyš
  */
 public class GraphVhdl {
 

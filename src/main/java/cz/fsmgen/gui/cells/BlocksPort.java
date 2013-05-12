@@ -27,7 +27,9 @@ import static cz.jvhdl.datatypes.DataTypeVhdl.Direction.*;
 
 /**
  *
- * @author Martin
+ * Parent class of input and output pins/ports.
+ * 
+ * @author Martin Janyš
  */
 public abstract class BlocksPort extends CellWithProperties implements Comparable<BlocksPort> {
 

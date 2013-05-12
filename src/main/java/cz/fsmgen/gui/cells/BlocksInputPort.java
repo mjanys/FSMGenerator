@@ -19,8 +19,9 @@ import cz.jvhdl.datatypes.std.StdLogicVhdl;
 import static cz.jvhdl.datatypes.DataTypeVhdl.Std.*;
 
 /**
- *
- * @author Martin
+ * Class represents input pin/port.
+ * 
+ * @author Martin Janyš
  */
 public class BlocksInputPort extends BlocksPort {
 

@@ -23,7 +23,9 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Martin
+ * Utils for work with properies.
+ * 
+ * @author Martin Janyš
  */
 public class PropertiesUtils {
 

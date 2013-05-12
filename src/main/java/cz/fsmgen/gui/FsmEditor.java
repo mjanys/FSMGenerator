@@ -32,6 +32,10 @@ import org.codehaus.plexus.util.FileUtils;
 
 /**
  *
+ * Entry point of desktop aplication.
+ * 
+ * Prepares and starts editor.
+ * 
  * @author Martin Janyš
  */
 public class FsmEditor extends GraphEditor {

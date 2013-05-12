@@ -22,7 +22,9 @@ import java.util.Map;
 
 /**
  *
- * @author Martin
+ * Graphical cell with accessable properties.
+ * 
+ * @author Martin Janyš
  */
 public abstract class CellWithProperties extends mxCell implements Properties, Serializable {
 

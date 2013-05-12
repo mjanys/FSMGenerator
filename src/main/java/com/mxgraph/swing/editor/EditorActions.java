@@ -73,7 +73,7 @@ import com.mxgraph.util.png.mxPngEncodeParam;
 import com.mxgraph.util.png.mxPngImageEncoder;
 import com.mxgraph.util.png.mxPngTextDecoder;
 import com.mxgraph.view.mxGraph;
-import cz.fsmgen.fsm.DeterminicticTransition;
+import cz.fsmgen.fsm.NodeterminicticTransitions;
 import cz.fsmgen.fsm.EpsilonTransition;
 import cz.fsmgen.fsm.InaccessibleStates;
 import cz.fsmgen.fsm.NonterminatingStates;
@@ -2455,7 +2455,7 @@ public class EditorActions {
                 Object currentRoot = g.getView().getCurrentRoot();
                 if (currentRoot instanceof BlockCell) {
                     BlockCell b = (BlockCell) currentRoot;
-                    new DeterminicticTransition(b).highlight();
+                    new NodeterminicticTransitions(b).highlight();
                 }
             }
         }

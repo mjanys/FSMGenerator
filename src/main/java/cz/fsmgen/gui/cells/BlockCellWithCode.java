@@ -17,7 +17,9 @@ import com.mxgraph.view.mxGraph;
 
 /**
  *
- * @author Martin
+ * Class is simplier version of BlockCell, contains pure vhdl code.
+ * 
+ * @author Martin Janyš
  */
 public class BlockCellWithCode extends BlockCell {
 

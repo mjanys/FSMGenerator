@@ -28,8 +28,6 @@ import com.mxgraph.util.mxResources;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxGraphView;
 import cz.fsmgen.gui.GraphEditor;
-import cz.fsmgen.gui.HelpDialog;
-import java.awt.Frame;
 import javax.swing.*;
 
 public class EditorMenuBar extends JMenuBar {
@@ -415,22 +413,22 @@ public class EditorMenuBar extends JMenuBar {
             }
         });
 
-        item = menu.add(new JMenuItem("About FSM Generator"));
-        item.addActionListener(new ActionListener() {
-            /*
-             * (non-Javadoc)
-             * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Frame f = (Frame) SwingUtilities.windowForComponent(editor);
-                HelpDialog helpDialog = new HelpDialog(
-                        f,
-                        false);
-                helpDialog.setLocationRelativeTo(f);
-                helpDialog.setVisible(true);
-            }
-        });
+//        item = menu.add(new JMenuItem("About FSM Generator"));
+//        item.addActionListener(new ActionListener() {
+//            /*
+//             * (non-Javadoc)
+//             * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+//             */
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                Frame f = (Frame) SwingUtilities.windowForComponent(editor);
+//                HelpDialog helpDialog = new HelpDialog(
+//                        f,
+//                        false);
+//                helpDialog.setLocationRelativeTo(f);
+//                helpDialog.setVisible(true);
+//            }
+//        });
     }
 
     /**

@@ -60,8 +60,19 @@
                     </arguments>
                 </configuration>
             </plugin>
+            
+            <!-- javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <excludePackageNames>com.mxgraph.*</excludePackageNames>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -97,6 +108,7 @@
     
     <reporting>
         <plugins>
+            
         </plugins>
     </reporting>
 </project>

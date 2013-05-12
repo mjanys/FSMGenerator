@@ -19,7 +19,9 @@ import javax.swing.SwingWorker;
 
 /**
  *
- * @author Martin
+ * Class is worker which do conversion of graph to VHDL in the background of application.
+ * 
+ * @author Martin Janyš
  */
 public class GraphAnalyzatorWorker extends SwingWorker<Boolean, Void> {
 

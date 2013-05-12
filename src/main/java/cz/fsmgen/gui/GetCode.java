@@ -15,7 +15,9 @@ package cz.fsmgen.gui;
 
 /**
  *
- * @author Martin
+ * Simple dialog window for getting code from user.
+ * 
+ * @author Martin Janyš
  */
 public class GetCode extends javax.swing.JDialog {
 

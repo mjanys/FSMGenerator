@@ -32,7 +32,9 @@ import cz.jvhdl.vdhdlgenerator.VhdlWriter;
 
 /**
  *
- * @author Martin
+ * Converts BlockCell to VHDL object.
+ * 
+ * @author Martin Janyš
  */
 public class BlockCellVhdl extends VHDL implements VhdlWriter {
 

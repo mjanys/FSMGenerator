@@ -1,7 +1,17 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * VYSOKÉ UČENÍ TECHNICKÉ V BRNĚ BRNO UNIVERSITY OF TECHNOLOGY
+ *
+ * FAKULTA INFORMAČNÍCH TECHNOLOGIÍ
+ *
+ * Baklářská práce
+ *
+ * Generátor konečných automatů z grafického popisu pro jazyk VHDL
+ *
+ * Author: Martin Janyš
+ *
+ * Brno 2013
  */
+
 package cz.fsmgen.fsm;
 
 import com.mxgraph.model.mxICell;
@@ -13,15 +23,17 @@ import java.util.List;
 
 /**
  *
- * @author Martin
+ * Class methods highlights nodeterminictic transitions.
+ * 
+ * @author Martin Janyš
  */
-public class NodeterminicticTransition implements HighlightWarnings {
+public class NodeterminicticTransitions implements HighlightWarnings {
 
     private final BlockCell fsmBlock;
     private final List<FsmEdgeCell> edges = new ArrayList<>();
     private final List<String> edgeConds = new ArrayList<>();
 
-    public NodeterminicticTransition(BlockCell fsmBlock) {
+    public NodeterminicticTransitions(BlockCell fsmBlock) {
         this.fsmBlock = fsmBlock;
     }
 
@@ -35,7 +47,6 @@ public class NodeterminicticTransition implements HighlightWarnings {
 //                if (!input.isEmpty()) {
                 edges.add(e);
                 if (edgeConds.contains(input)) {
-                    int index = edges.indexOf(e);
                     for (int j = 0; j < edgeConds.size(); j++) {
                         if (edgeConds.get(j).equals(input)) {
                             if (edges.get(j).getSource() == e.getSource()) {
@@ -44,9 +55,9 @@ public class NodeterminicticTransition implements HighlightWarnings {
                             }
                         }
                     }
-//                    }
-                    edgeConds.add(input);
                 }
+                edgeConds.add(input);
+//                }
             }
         }
     }

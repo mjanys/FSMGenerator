@@ -25,8 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Martin
+ * Class methods highlights nonterminating states.
+ * 
+ * @author Martin Janyš
  */
 public class NonterminatingStates implements HighlightWarnings {
 

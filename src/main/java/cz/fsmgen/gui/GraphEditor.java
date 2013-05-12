@@ -55,6 +55,12 @@ import javax.swing.JOptionPane;
 import java.io.File;
 import javax.swing.JFileChooser;
 
+/**
+ * Contains and implements all funcionality of graph editor.
+ * This class is based on jGraph example.
+ * 
+ * @author Martin Janyš
+ */
 public class GraphEditor extends BasicGraphEditor {
 
     /**
@@ -216,12 +222,10 @@ public class GraphEditor extends BasicGraphEditor {
                     if (cell instanceof Properties) {
                         propPanel.updateBy((Properties) cell);
 
-                    }
-                    else {
+                    } else {
                         propPanel.clear();
                     }
-                }
-                else {
+                } else {
                     propPanel.clear();
                 }
             }
@@ -229,7 +233,7 @@ public class GraphEditor extends BasicGraphEditor {
     }
 
     public static void DEBUG(mxCell c) {
-        System.out.println(c.getStyle());
+//        System.out.println(c.getStyle());
     }
 
     public static boolean testFile(File f) {
@@ -293,8 +297,7 @@ public class GraphEditor extends BasicGraphEditor {
             File file = fc.getSelectedFile();
             destinationFile = file;
             return destinationFile;
-        }
-        else {
+        } else {
             return null;
         }
 
@@ -322,7 +325,7 @@ public class GraphEditor extends BasicGraphEditor {
     }
 
     /**
-     *
+     * Customed graph component is wrapper for canvas.
      */
     public static class CustomGraphComponent extends mxGraphComponent {
 
@@ -332,7 +335,6 @@ public class GraphEditor extends BasicGraphEditor {
         private static final long serialVersionUID = -6833603133512882012L;
 
         /**
-         *
          * @param graph
          */
         public CustomGraphComponent(mxGraph graph) {
@@ -508,8 +510,7 @@ public class GraphEditor extends BasicGraphEditor {
 
                                             }
                                         }
-                                    }
-                                    else {
+                                    } else {
                                         tip.append("<tr>")
                                                 .append("<td>")
                                                 .append(f)
@@ -520,14 +521,12 @@ public class GraphEditor extends BasicGraphEditor {
                                                 ? value.toString() : "")
                                                 .append("</tr>");
                                     }
-                                }
-                                catch (Exception ex) {
+                                } catch (Exception ex) {
                                 }
                             }
                         }
                     }
-                }
-                else {
+                } else {
                     if (cell instanceof FsmStateCell) {
                         if (cell instanceof Properties) {
                             String[] fields = ((Properties) cell).getPropertiesFields();
@@ -553,8 +552,7 @@ public class GraphEditor extends BasicGraphEditor {
                                                 }
                                             }
                                         }
-                                    }
-                                    else {
+                                    } else {
                                         tip.append("<tr>")
                                                 .append("<td>")
                                                 .append(f)
@@ -565,19 +563,16 @@ public class GraphEditor extends BasicGraphEditor {
                                                 ? value.toString() : "")
                                                 .append("</tr>");
                                     }
-                                }
-                                catch (Exception ex) {
+                                } catch (Exception ex) {
                                     System.err.println(ex);
                                 }
                             }
                         }
-                    }
-                    else {
+                    } else {
                         return "";
                     }
                 }
-            }
-            else {
+            } else {
                 tip.append(((mxCell) cell).getValue());
             }
             tip.append("</table></html>");
@@ -648,8 +643,7 @@ public class GraphEditor extends BasicGraphEditor {
             if (o.length == 1) {
                 if (o[0] instanceof FsmInitStateCell) {
                     o[0] = new FsmStateCell();
-                }
-                else if (o[0] instanceof FsmStateCell) {
+                } else if (o[0] instanceof FsmStateCell) {
                     ((FsmStateCell) o[0]).setValue(null);
                 }
             }
@@ -664,8 +658,7 @@ public class GraphEditor extends BasicGraphEditor {
                 if (selected.length == 1 && selected[0] instanceof BlockCellWithCode) {
                     BlockCellWithCode b = (BlockCellWithCode) selected[0];
                     if (b.isComplete()) {
-                        GetCode dialog
-                                = new GetCode();
+                        GetCode dialog = new GetCode();
                         dialog.setCode(b.getCode());
                         dialog.setArch(b.getArchitecture());
 
@@ -676,8 +669,7 @@ public class GraphEditor extends BasicGraphEditor {
                         b.setCode(dialog.getCode());
                         b.setArchitecture(dialog.getArch());
                         GraphEditor.app().propertiesPanel.updateBy(b);
-                    }
-                    else {
+                    } else {
                         GraphEditor.app().displayMessage("Block ...", "Fill name of all ports", JOptionPane.INFORMATION_MESSAGE);
                     }
                     return;
@@ -702,15 +694,13 @@ public class GraphEditor extends BasicGraphEditor {
                                 .getConnectionHandler()
                                 .setCreateTarget(true);
 
-                        GraphEditor.app().getUndoManager().clear();
                         super.enterGroup(cell);
-                    }
-                    else {
+                        GraphEditor.app().getUndoManager().clear();
+                    } else {
                         GraphEditor.app().displayMessage("Block ...", "Fill name of all ports", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             }
-
         }
 
         @Override
@@ -731,8 +721,8 @@ public class GraphEditor extends BasicGraphEditor {
                     .getConnectionHandler()
                     .setCreateTarget(false);
 
-            GraphEditor.app().getUndoManager().clear();
             super.exitGroup();
+            GraphEditor.app().getUndoManager().clear();
         }
 
         // Overrides method to store a cell label in the model
@@ -789,8 +779,7 @@ public class GraphEditor extends BasicGraphEditor {
     public static Object getTopLevelParent(mxCell cell) {
         if (cell.getParent() != null) {
             return getTopLevelParent((mxCell) cell.getParent());
-        }
-        else {
+        } else {
             return cell;
         }
     }

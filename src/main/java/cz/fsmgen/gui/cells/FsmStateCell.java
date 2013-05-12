@@ -23,7 +23,9 @@ import java.util.Set;
 
 /**
  *
- * @author Martin
+ * Common fsm state.
+ * 
+ * @author Martin Janyš
  */
 public class FsmStateCell extends CellWithProperties implements Comparable<FsmStateCell> {
 

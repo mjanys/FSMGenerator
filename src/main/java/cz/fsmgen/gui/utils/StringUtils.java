@@ -15,7 +15,9 @@ package cz.fsmgen.gui.utils;
 
 /**
  *
- * @author Martin
+ * Utils for work with Strings.
+ * 
+ * @author Martin Janyš
  */
 public class StringUtils {
 

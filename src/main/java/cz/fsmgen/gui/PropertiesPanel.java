@@ -11,6 +11,7 @@
  *
  * Brno 2013
  */
+
 package cz.fsmgen.gui;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -44,7 +45,11 @@ import static cz.fsmgen.gui.cells.BlocksOutputPort.Type.*;
 
 /**
  *
- * @author Martin
+ * Key part of editor is this panel for properties.
+ * 
+ * Panel could access to object properties.
+ * 
+ * @author Martin Janyš
  */
 public class PropertiesPanel extends javax.swing.JPanel {
     
