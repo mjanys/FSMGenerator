@@ -30,19 +30,21 @@ Usage of editor:
          | FSM_CE  | 1         |
          
       
-      2) | CE      | 1 or      |
+      2) if (CE = '1' or FSM_CE = '1') then .... 
+      
+         | CE      | 1 or      |
          | FSM_CE  | 1 or      |
          
-         --> if (CE = '1' or FSM_CE = '1') then .... 
          
-      3) | CE      | /= '1' or |
-         | FSM_CE  | 1         |
+      3) if (CE /= '1' or FSM_CE = '1') then ....
+      
+         | CE      | /= '1' or |
+         | FSM_CE  | 1         | 
          
-         --> if (CE /= '1' or FSM_CE = '1') then .... 
-         
-      4) | CE      | "not CE = '0'" or |
+      4) if (not CE = '1' or FSM_CE = 'X') then ....
+      
+         | CE      | "not CE = '0'" or |
          | FSM_CE  | "FSM_CE = 'X'"    |
          
-         --> if (not CE = '1' or FSM_CE = 'X') then .... 
          
     mealy: raw input
