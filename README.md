@@ -21,12 +21,14 @@ Usage of editor:
     name: raw input
     moore: raw input
     
-  Edges: (if() conditions   --> if (CE = '1' and FSM_CE = '1') then .... )
+  Edges:
     input conditions:
-      1) | CE      | 1         |
+    
+      1) if (CE = '1' and FSM_CE = '1') then ....
+         
+         | CE      | 1         |
          | FSM_CE  | 1         |
          
-         --> if (CE = '1' and FSM_CE = '1') then ....
       
       2) | CE      | 1 or      |
          | FSM_CE  | 1 or      |
