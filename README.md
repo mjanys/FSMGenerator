@@ -13,7 +13,8 @@ Run:
   
 Compile to single jar:
   mvn compile assembly:single
-  
+
+--
 Usage of editor:
 
   States:
