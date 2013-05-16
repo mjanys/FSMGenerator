@@ -21,7 +21,7 @@ Usage of editor:
     name: raw input
     moore: raw input
     
-  Edges:
+  Edges: (if() conditions)
     input conditions:
       1) | CE      | 1         |
          | FSM_CE  | 1         |
